@@ -1,0 +1,10 @@
+A:\КУРСОВАЯ 3 КУРС\NonTurnableTester\NonTurnableTester\bin\Debug\NonTurnableTester.exe.config
+A:\КУРСОВАЯ 3 КУРС\NonTurnableTester\NonTurnableTester\bin\Debug\NonTurnableTester.exe
+A:\КУРСОВАЯ 3 КУРС\NonTurnableTester\NonTurnableTester\bin\Debug\NonTurnableTester.pdb
+A:\КУРСОВАЯ 3 КУРС\NonTurnableTester\NonTurnableTester\obj\Debug\NonTurnableTester.csprojAssemblyReference.cache
+A:\КУРСОВАЯ 3 КУРС\NonTurnableTester\NonTurnableTester\obj\Debug\NonTurnableTester.Form1.resources
+A:\КУРСОВАЯ 3 КУРС\NonTurnableTester\NonTurnableTester\obj\Debug\NonTurnableTester.Properties.Resources.resources
+A:\КУРСОВАЯ 3 КУРС\NonTurnableTester\NonTurnableTester\obj\Debug\NonTurnableTester.csproj.GenerateResource.cache
+A:\КУРСОВАЯ 3 КУРС\NonTurnableTester\NonTurnableTester\obj\Debug\NonTurnableTester.csproj.CoreCompileInputs.cache
+A:\КУРСОВАЯ 3 КУРС\NonTurnableTester\NonTurnableTester\obj\Debug\NonTurnableTester.exe
+A:\КУРСОВАЯ 3 КУРС\NonTurnableTester\NonTurnableTester\obj\Debug\NonTurnableTester.pdb
