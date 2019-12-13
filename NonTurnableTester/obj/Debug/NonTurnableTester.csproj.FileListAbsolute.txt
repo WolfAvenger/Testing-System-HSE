@@ -8,3 +8,12 @@ A:\КУРСОВАЯ 3 КУРС\NonTurnableTester\NonTurnableTester\obj\Debug\Non
 A:\КУРСОВАЯ 3 КУРС\NonTurnableTester\NonTurnableTester\obj\Debug\NonTurnableTester.csproj.CoreCompileInputs.cache
 A:\КУРСОВАЯ 3 КУРС\NonTurnableTester\NonTurnableTester\obj\Debug\NonTurnableTester.exe
 A:\КУРСОВАЯ 3 КУРС\NonTurnableTester\NonTurnableTester\obj\Debug\NonTurnableTester.pdb
+C:\HSE\CourseWork3\Prog\NonTurnableTester\bin\Debug\NonTurnableTester.exe.config
+C:\HSE\CourseWork3\Prog\NonTurnableTester\bin\Debug\NonTurnableTester.exe
+C:\HSE\CourseWork3\Prog\NonTurnableTester\bin\Debug\NonTurnableTester.pdb
+C:\HSE\CourseWork3\Prog\NonTurnableTester\obj\Debug\NonTurnableTester.csprojAssemblyReference.cache
+C:\HSE\CourseWork3\Prog\NonTurnableTester\obj\Debug\NonTurnableTester.Form1.resources
+C:\HSE\CourseWork3\Prog\NonTurnableTester\obj\Debug\NonTurnableTester.Properties.Resources.resources
+C:\HSE\CourseWork3\Prog\NonTurnableTester\obj\Debug\NonTurnableTester.csproj.GenerateResource.cache
+C:\HSE\CourseWork3\Prog\NonTurnableTester\obj\Debug\NonTurnableTester.exe
+C:\HSE\CourseWork3\Prog\NonTurnableTester\obj\Debug\NonTurnableTester.pdb

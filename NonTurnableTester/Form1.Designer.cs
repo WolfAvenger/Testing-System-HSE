@@ -34,10 +34,10 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.QuestionTextBox = new System.Windows.Forms.TextBox();
             this.AnsweringPanel = new System.Windows.Forms.Panel();
-            this.AnswerACheckBox = new System.Windows.Forms.CheckBox();
-            this.AnswerBCheckBox = new System.Windows.Forms.CheckBox();
             this.AnswerCCheckBox = new System.Windows.Forms.CheckBox();
             this.AnswerDCheckBox = new System.Windows.Forms.CheckBox();
+            this.AnswerBCheckBox = new System.Windows.Forms.CheckBox();
+            this.AnswerACheckBox = new System.Windows.Forms.CheckBox();
             this.NextQuestionButton = new System.Windows.Forms.Button();
             this.FinishButton = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
@@ -46,8 +46,9 @@
             // 
             // QuestionListBox
             // 
+            this.QuestionListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QuestionListBox.FormattingEnabled = true;
-            this.QuestionListBox.ItemHeight = 16;
+            this.QuestionListBox.ItemHeight = 25;
             this.QuestionListBox.Items.AddRange(new object[] {
             "Q1",
             "Q2",
@@ -56,7 +57,7 @@
             "Q5"});
             this.QuestionListBox.Location = new System.Drawing.Point(12, 12);
             this.QuestionListBox.Name = "QuestionListBox";
-            this.QuestionListBox.Size = new System.Drawing.Size(59, 692);
+            this.QuestionListBox.Size = new System.Drawing.Size(59, 679);
             this.QuestionListBox.TabIndex = 0;
             // 
             // statusStrip1
@@ -65,9 +66,9 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CompIDtoolStrip,
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 777);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 776);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1128, 29);
+            this.statusStrip1.Size = new System.Drawing.Size(1128, 30);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -95,12 +96,15 @@
             this.QuestionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.QuestionTextBox.BackColor = System.Drawing.SystemColors.Control;
+            this.QuestionTextBox.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.QuestionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.QuestionTextBox.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.QuestionTextBox.Location = new System.Drawing.Point(78, 13);
             this.QuestionTextBox.MaxLength = 65536;
             this.QuestionTextBox.Multiline = true;
             this.QuestionTextBox.Name = "QuestionTextBox";
             this.QuestionTextBox.ReadOnly = true;
+            this.QuestionTextBox.ShortcutsEnabled = false;
             this.QuestionTextBox.Size = new System.Drawing.Size(1038, 525);
             this.QuestionTextBox.TabIndex = 2;
             this.QuestionTextBox.TabStop = false;
@@ -118,26 +122,6 @@
             this.AnsweringPanel.Name = "AnsweringPanel";
             this.AnsweringPanel.Size = new System.Drawing.Size(1038, 160);
             this.AnsweringPanel.TabIndex = 3;
-            // 
-            // AnswerACheckBox
-            // 
-            this.AnswerACheckBox.AutoSize = true;
-            this.AnswerACheckBox.Location = new System.Drawing.Point(4, 4);
-            this.AnswerACheckBox.Name = "AnswerACheckBox";
-            this.AnswerACheckBox.Size = new System.Drawing.Size(89, 21);
-            this.AnswerACheckBox.TabIndex = 0;
-            this.AnswerACheckBox.Text = "Answer A";
-            this.AnswerACheckBox.UseVisualStyleBackColor = true;
-            // 
-            // AnswerBCheckBox
-            // 
-            this.AnswerBCheckBox.AutoSize = true;
-            this.AnswerBCheckBox.Location = new System.Drawing.Point(4, 41);
-            this.AnswerBCheckBox.Name = "AnswerBCheckBox";
-            this.AnswerBCheckBox.Size = new System.Drawing.Size(89, 21);
-            this.AnswerBCheckBox.TabIndex = 1;
-            this.AnswerBCheckBox.Text = "Answer B";
-            this.AnswerBCheckBox.UseVisualStyleBackColor = true;
             // 
             // AnswerCCheckBox
             // 
@@ -159,6 +143,26 @@
             this.AnswerDCheckBox.Text = "Answer D";
             this.AnswerDCheckBox.UseVisualStyleBackColor = true;
             // 
+            // AnswerBCheckBox
+            // 
+            this.AnswerBCheckBox.AutoSize = true;
+            this.AnswerBCheckBox.Location = new System.Drawing.Point(4, 41);
+            this.AnswerBCheckBox.Name = "AnswerBCheckBox";
+            this.AnswerBCheckBox.Size = new System.Drawing.Size(89, 21);
+            this.AnswerBCheckBox.TabIndex = 1;
+            this.AnswerBCheckBox.Text = "Answer B";
+            this.AnswerBCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // AnswerACheckBox
+            // 
+            this.AnswerACheckBox.AutoSize = true;
+            this.AnswerACheckBox.Location = new System.Drawing.Point(4, 4);
+            this.AnswerACheckBox.Name = "AnswerACheckBox";
+            this.AnswerACheckBox.Size = new System.Drawing.Size(89, 21);
+            this.AnswerACheckBox.TabIndex = 0;
+            this.AnswerACheckBox.Text = "Answer A";
+            this.AnswerACheckBox.UseVisualStyleBackColor = true;
+            // 
             // NextQuestionButton
             // 
             this.NextQuestionButton.Location = new System.Drawing.Point(12, 713);
@@ -173,7 +177,7 @@
             this.FinishButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.FinishButton.BackColor = System.Drawing.Color.ForestGreen;
             this.FinishButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.FinishButton.Font = new System.Drawing.Font("Lucida Bright", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FinishButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FinishButton.ForeColor = System.Drawing.Color.GreenYellow;
             this.FinishButton.Location = new System.Drawing.Point(988, 781);
             this.FinishButton.Name = "FinishButton";
