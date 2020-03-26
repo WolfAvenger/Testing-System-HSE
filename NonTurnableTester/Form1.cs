@@ -1,7 +1,9 @@
-﻿using System;
+﻿using NonTurnableTester.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,21 +14,20 @@ namespace NonTurnableTester
 {
     public partial class Form1 : Form
     {
-        Config c;
         Pack pack;
-        CheckBox[] answers = new CheckBox[4];
+        CheckBox[] answerCheckBoxes = new CheckBox[4];
         List<Control> mainControls, nameControls;
-        int last_question_index = 0;
+        int last_question_index = -1;
+        JsonSender jsonSender = new JsonSender();
 
-        void SaveLastAnswer(int index)
+        void SaveLastAnswer(int index, Question q)
         {
-            List<int> ans = new List<int>();
-            for (int i = 0; i < answers.Length; i++)
+            for (int i = 0; i < 4; i++)
             {
-                if (answers[i].Checked) { ans.Add(i); }
-                answers[i].Checked = false;
+                if (answerCheckBoxes[i].Checked) q.getAnswers()[i].SetChooseState(true);
+                else q.getAnswers()[i].SetChooseState(false);
+                answerCheckBoxes[i].Checked = false;
             }
-            pack.SetAnswer(ans, index);
         }
         public Form1()
         {
@@ -37,7 +38,7 @@ namespace NonTurnableTester
                 QuestionTextBox,
                 AnswerACheckBox,
                 AnswerBCheckBox,
-                AnswerCCheckBox, 
+                AnswerCCheckBox,
                 AnswerDCheckBox,
                 FinishButton
             };
@@ -47,48 +48,41 @@ namespace NonTurnableTester
                 NametextBox,
                 StartButton
             };
-            
+
             foreach (var elem in mainControls)
             {
                 elem.Visible = false;
             }
 
 
-            c = new Config();
-            c.Deser();
-            pack = new Pack();
-            pack.GetPack();
-            answers = new CheckBox[] { AnswerACheckBox, AnswerBCheckBox, AnswerCCheckBox, AnswerDCheckBox };
+            
+            pack = jsonSender.GetPack(false);
+            Debug.WriteLine(pack.GetQuestions()[0].GetQuestionText());
+            answerCheckBoxes = new CheckBox[] { AnswerACheckBox, AnswerBCheckBox, AnswerCCheckBox, AnswerDCheckBox };
 
-            //info in bar below
-            CompIDtoolStrip.Text = $"Computer ID: {c.COMPUTER_ID.ToString()}";
-
-            //start to fill this form
-
-            for (int i=1; i<pack.GetQuestions().Count + 1; i++)
+            for (int i = 1; i < pack.GetQuestions().Count + 1; i++)
             {
                 QuestionListBox.Items.Add(i);
             }
 
-            //selecting first question
-
             QuestionListBox.SelectedIndex = 0;
         }
-
         private void QuestionListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SaveLastAnswer(last_question_index);
-            last_question_index = QuestionListBox.SelectedIndex;
-
-            QuestionTextBox.Text = pack.GetQuestions()[QuestionListBox.SelectedIndex].GetQuestionText();
-            AnswerACheckBox.Text = pack.GetQuestions()[QuestionListBox.SelectedIndex].GetA();
-            AnswerBCheckBox.Text = pack.GetQuestions()[QuestionListBox.SelectedIndex].GetB();
-            AnswerCCheckBox.Text = pack.GetQuestions()[QuestionListBox.SelectedIndex].GetC();
-            AnswerDCheckBox.Text = pack.GetQuestions()[QuestionListBox.SelectedIndex].GetD();
-
-            foreach (int index in pack.GetQuestions()[QuestionListBox.SelectedIndex].GetGivenAnswersIndexes())
+            List<Answer> answers;
+            if (last_question_index >= 0)
             {
-                answers[index].Checked = true;
+                SaveLastAnswer(last_question_index, pack.GetQuestions()[last_question_index]);
+            }
+            last_question_index = QuestionListBox.SelectedIndex;
+           
+            QuestionTextBox.Text = pack.GetQuestions()[QuestionListBox.SelectedIndex].GetQuestionText();
+            answers = pack.GetQuestions()[QuestionListBox.SelectedIndex].getAnswers();
+            for (var i=0; i<4; i++)
+            {
+                answerCheckBoxes[i].Text = answers[i].GetText();
+                if (answers[i].IsChosen()) answerCheckBoxes[i].Checked = true;
+                else answerCheckBoxes[i].Checked = false;
             }
         }
 
@@ -108,9 +102,9 @@ namespace NonTurnableTester
 
         private void FinishButton_Click(object sender, EventArgs e)
         {
-            SaveLastAnswer(QuestionListBox.SelectedIndex);
+            SaveLastAnswer(last_question_index, pack.GetQuestions()[last_question_index]);
 
-            pack.SendPack();
+            jsonSender.SendPack(false, pack);
             Environment.Exit(0);
         }
     }
