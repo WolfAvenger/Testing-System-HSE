@@ -19,23 +19,32 @@ namespace NonTurnableTester
         List<Control> mainControls, nameControls;
         int last_question_index = -1;
         JsonSender jsonSender = new JsonSender();
+        Dictionary<CheckBox, Answer> CA = new Dictionary<CheckBox, Answer>();
+        PackSettings sets;
 
         void SaveLastAnswer(int index, Question q)
         {
             for (int i = 0; i < 4; i++)
             {
-                if (answerCheckBoxes[i].Checked) q.getAnswers()[i].SetChooseState(true);
-                else q.getAnswers()[i].SetChooseState(false);
+                if (answerCheckBoxes[i].Checked) q.SetGivenAnswer(CA[answerCheckBoxes[i]].GetID(), true);
+                else q.SetGivenAnswer(CA[answerCheckBoxes[i]].GetID(), false);
                 answerCheckBoxes[i].Checked = false;
             }
         }
+
+        string EmbedIMG(string s)
+        {
+            string url = "<html><body><img src=\"data:image/png;base64," + s + "\" /></body></html>";
+            return url;
+        }
+
         public Form1()
         {
             InitializeComponent();
             mainControls = new List<Control>()
             {
                 QuestionListBox,
-                QuestionTextBox,
+                webBrowser,
                 AnswerACheckBox,
                 AnswerBCheckBox,
                 AnswerCCheckBox,
@@ -53,12 +62,16 @@ namespace NonTurnableTester
             {
                 elem.Visible = false;
             }
-
-
             
             pack = jsonSender.GetPack(false);
-            Debug.WriteLine(pack.GetQuestions()[0].GetQuestionText());
+            sets = pack.GetSettings();
+            if (sets.GetPriorities().Count == 0) sets.SetPriorities(jsonSender.GetConfig().InPriority);
             answerCheckBoxes = new CheckBox[] { AnswerACheckBox, AnswerBCheckBox, AnswerCCheckBox, AnswerDCheckBox };
+            
+            foreach (var elem in answerCheckBoxes)
+            {
+                CA[elem] = null;
+            }
 
             for (int i = 1; i < pack.GetQuestions().Count + 1; i++)
             {
@@ -69,19 +82,31 @@ namespace NonTurnableTester
         }
         private void QuestionListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<Answer> answers;
             if (last_question_index >= 0)
             {
                 SaveLastAnswer(last_question_index, pack.GetQuestions()[last_question_index]);
             }
             last_question_index = QuestionListBox.SelectedIndex;
-           
-            QuestionTextBox.Text = pack.GetQuestions()[QuestionListBox.SelectedIndex].GetQuestionText();
-            answers = pack.GetQuestions()[QuestionListBox.SelectedIndex].getAnswers();
+
+            switch (jsonSender.GetConfig().InPriority[0])
+            {
+                case "html":
+                    webBrowser.DocumentText = pack.GetQuestions()[QuestionListBox.SelectedIndex].GetHTML();
+                    break;
+                case "image":
+                    webBrowser.DocumentText = EmbedIMG(pack.GetQuestions()[QuestionListBox.SelectedIndex].GetQuestionImageEncoded());
+                    break;
+                case "text":
+                    webBrowser.DocumentText = pack.GetQuestions()[QuestionListBox.SelectedIndex].GetQuestionText();
+                    break;
+            }
+            CompIDtoolStrip.Text = webBrowser.DocumentText;
+            List<Answer> a = pack.GetQuestions()[QuestionListBox.SelectedIndex].getAnswers();
             for (var i=0; i<4; i++)
             {
-                answerCheckBoxes[i].Text = answers[i].GetText();
-                if (answers[i].IsChosen()) answerCheckBoxes[i].Checked = true;
+                answerCheckBoxes[i].Text = a[i].GetText();
+                CA[answerCheckBoxes[i]] = a[i];
+                if (a[i].IsChosen()) answerCheckBoxes[i].Checked = true;
                 else answerCheckBoxes[i].Checked = false;
             }
         }

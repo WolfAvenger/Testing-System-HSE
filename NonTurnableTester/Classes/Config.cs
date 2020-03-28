@@ -13,6 +13,7 @@ namespace NonTurnableTester
     class Config
     {
         public string REPO_PATH { get; set; }
+        public List<string> InPriority { get; set; }
 
         public void SerExample()
         {
@@ -29,6 +30,7 @@ namespace NonTurnableTester
             {
                 Config c = JsonConvert.DeserializeObject<Config>(reader.ReadToEnd());
                 REPO_PATH = c.REPO_PATH;
+                InPriority = c.InPriority;
             }
             
         }

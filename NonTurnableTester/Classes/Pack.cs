@@ -26,6 +26,7 @@ namespace NonTurnableTester
             Questions[index].SetGivenAnswer(ID, state);
         }
 
+        public PackSettings GetSettings() { return Settings; }
         public List<Question> GetQuestions() { return Questions; }
         public void SetStudentName(string name) { StudentName = name; }
     }

@@ -1,1 +1,103 @@
-{"Questions":[{"AllAnswers":[{"Chosen":true,"ID":1,"Correct":false,"Text":"0Answer_1"},{"Chosen":false,"ID":2,"Correct":false,"Text":"0Answer_2"},{"Chosen":true,"ID":3,"Correct":false,"Text":"0Answer_3"},{"Chosen":false,"ID":4,"Correct":false,"Text":"0Answer_4"}],"QuestionText":"Question_0"},{"AllAnswers":[{"Chosen":true,"ID":1,"Correct":false,"Text":"1Answer_1"},{"Chosen":true,"ID":2,"Correct":false,"Text":"1Answer_2"},{"Chosen":false,"ID":3,"Correct":false,"Text":"1Answer_3"},{"Chosen":false,"ID":4,"Correct":false,"Text":"1Answer_4"}],"QuestionText":"Question_1"},{"AllAnswers":[{"Chosen":true,"ID":1,"Correct":false,"Text":"2Answer_1"},{"Chosen":true,"ID":2,"Correct":false,"Text":"2Answer_2"},{"Chosen":true,"ID":3,"Correct":false,"Text":"2Answer_3"},{"Chosen":false,"ID":4,"Correct":false,"Text":"2Answer_4"}],"QuestionText":"Question_2"}],"StudentName":"SOMEBODY","Settings":{}}
+{
+    "Questions":[
+        {
+            "AllAnswers":[
+                {
+                    "Chosen":false,
+                    "ID":1,
+                    "Correct":false,
+                    "Text":"0Answer_1"
+                },
+                {
+                    "Chosen":false,
+                    "ID":2,
+                    "Correct":false,
+                    "Text":"0Answer_2"
+                },
+                {
+                    "Chosen":false,
+                    "ID":3,
+                    "Correct":false,
+                    "Text":"0Answer_3"
+                },
+                {
+                    "Chosen":false,
+                    "ID":4,
+                    "Correct":false,
+                    "Text":"0Answer_4"
+                }
+            ],
+            "QuestionText":"Question_0", 
+	    "QuestionImageEncoded": "",
+	    "QuestionHTML":"<html><body>Question <b>0</b></body></html>"
+        },
+        {
+            "AllAnswers":[
+                {
+                    "Chosen":false,
+                    "ID":1,
+                    "Correct":false,
+                    "Text":"1Answer_1"
+                },
+                {
+                    "Chosen":false,
+                    "ID":2,
+                    "Correct":false,
+                    "Text":"1Answer_2"
+                },
+                {
+                    "Chosen":false,
+                    "ID":3,
+                    "Correct":false,
+                    "Text":"1Answer_3"
+                },
+                {
+                    "Chosen":false,
+                    "ID":4,
+                    "Correct":false,
+                    "Text":"1Answer_4"
+                }
+            ],
+            "QuestionText":"Question_1", 
+	    "QuestionImageEncoded": "",
+	    "QuestionHTML":"<html><body>Question <b>1</b></body></html>"
+        },
+        {
+            "AllAnswers":[
+                {
+                    "Chosen":false,
+                    "ID":1,
+                    "Correct":false,
+                    "Text":"2Answer_1"
+                },
+                {
+                    "Chosen":false,
+                    "ID":2,
+                    "Correct":false,
+                    "Text":"2Answer_2"
+                },
+                {
+                    "Chosen":false,
+                    "ID":3,
+                    "Correct":false,
+                    "Text":"2Answer_3"
+                },
+                {
+                    "Chosen":false,
+                    "ID":4,
+                    "Correct":false,
+                    "Text":"2Answer_4"
+                }
+            ],
+            "QuestionText":"Question_2", 
+	    "QuestionImageEncoded": "",
+	    "QuestionHTML":"<html><body>Question <b>2</b></body></html>"
+        }
+    ],
+    "StudentName":"Фамилия_Имя",
+    "Settings":{
+	"EndTime": "2020-03-29T20:30:0.0000000Z",
+	"InPriority": [],
+	"Mins": 40
+    }
+}

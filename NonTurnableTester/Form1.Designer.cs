@@ -32,7 +32,6 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.CompIDtoolStrip = new System.Windows.Forms.ToolStripStatusLabel();
             this.StudentNameToolStrip = new System.Windows.Forms.ToolStripStatusLabel();
-            this.QuestionTextBox = new System.Windows.Forms.TextBox();
             this.AnswerCCheckBox = new System.Windows.Forms.CheckBox();
             this.AnswerDCheckBox = new System.Windows.Forms.CheckBox();
             this.AnswerBCheckBox = new System.Windows.Forms.CheckBox();
@@ -41,6 +40,7 @@
             this.Namelabel = new System.Windows.Forms.Label();
             this.NametextBox = new System.Windows.Forms.TextBox();
             this.StartButton = new System.Windows.Forms.Button();
+            this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,25 +85,6 @@
             this.StudentNameToolStrip.Size = new System.Drawing.Size(111, 24);
             this.StudentNameToolStrip.Text = "Student Name";
             this.StudentNameToolStrip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // QuestionTextBox
-            // 
-            this.QuestionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.QuestionTextBox.BackColor = System.Drawing.SystemColors.Control;
-            this.QuestionTextBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.QuestionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.QuestionTextBox.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.QuestionTextBox.Location = new System.Drawing.Point(134, 13);
-            this.QuestionTextBox.MaxLength = 65536;
-            this.QuestionTextBox.Multiline = true;
-            this.QuestionTextBox.Name = "QuestionTextBox";
-            this.QuestionTextBox.ReadOnly = true;
-            this.QuestionTextBox.ShortcutsEnabled = false;
-            this.QuestionTextBox.Size = new System.Drawing.Size(982, 525);
-            this.QuestionTextBox.TabIndex = 2;
-            this.QuestionTextBox.TabStop = false;
-            this.QuestionTextBox.Text = "Here will be Question Text";
             // 
             // AnswerCCheckBox
             // 
@@ -192,6 +173,17 @@
             this.StartButton.UseVisualStyleBackColor = true;
             this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
             // 
+            // webBrowser
+            // 
+            this.webBrowser.Location = new System.Drawing.Point(133, 12);
+            this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser.Name = "webBrowser";
+            this.webBrowser.Size = new System.Drawing.Size(975, 526);
+            this.webBrowser.TabIndex = 9;
+            this.webBrowser.TabStop = false;
+            this.webBrowser.Visible = false;
+            this.webBrowser.WebBrowserShortcutsEnabled = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -207,10 +199,10 @@
             this.Controls.Add(this.AnswerCCheckBox);
             this.Controls.Add(this.FinishButton);
             this.Controls.Add(this.AnswerBCheckBox);
-            this.Controls.Add(this.QuestionTextBox);
             this.Controls.Add(this.AnswerACheckBox);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.QuestionListBox);
+            this.Controls.Add(this.webBrowser);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
@@ -230,7 +222,6 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel CompIDtoolStrip;
         private System.Windows.Forms.ToolStripStatusLabel StudentNameToolStrip;
-        private System.Windows.Forms.TextBox QuestionTextBox;
         private System.Windows.Forms.CheckBox AnswerCCheckBox;
         private System.Windows.Forms.CheckBox AnswerDCheckBox;
         private System.Windows.Forms.CheckBox AnswerBCheckBox;
@@ -239,6 +230,7 @@
         private System.Windows.Forms.Label Namelabel;
         private System.Windows.Forms.TextBox NametextBox;
         private System.Windows.Forms.Button StartButton;
+        private System.Windows.Forms.WebBrowser webBrowser;
     }
 }
 

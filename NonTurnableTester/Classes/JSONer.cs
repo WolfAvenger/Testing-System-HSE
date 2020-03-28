@@ -21,7 +21,7 @@ namespace NonTurnableTester.Classes
         {
             return Config;
         }
-        public  Pack GetPack(bool from_repo)
+        public Pack GetPack(bool from_repo)
         {
             Pack p;
             if (!from_repo)
