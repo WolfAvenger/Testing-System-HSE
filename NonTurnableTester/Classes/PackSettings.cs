@@ -27,21 +27,18 @@ namespace NonTurnableTester
             InPriority = p;
         }
 
-        public DateTimeOffset GetFinishTime()
+        public void SetFinishTime()
         {
             DateTime now = DateTime.Now;
             Duration = new DateTimeOffset(now.AddMinutes(Mins), TimeZoneInfo.Local.GetUtcOffset(now));
             if (EndTime < Duration)
             {
-                return EndTime;
-            }
-            else
-            {
-                return Duration;
+                Duration = EndTime;
             }
         }
 
         public List<string> GetPriorities() { return InPriority; }
         public void SetPriorities(List<string> p) { InPriority = p; }
+        public DateTimeOffset GetFinishTime() { return Duration; }
     }
 }

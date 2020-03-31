@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
+using Timer = System.Windows.Forms.Timer;
 
 namespace NonTurnableTester
 {
@@ -36,6 +38,24 @@ namespace NonTurnableTester
         {
             string url = "<html><body><img src=\"data:image/png;base64," + s + "\" /></body></html>";
             return url;
+        }
+
+        void TimeThread()
+        {
+            DateTimeOffset finish = sets.GetFinishTime();
+            while (true)
+            {
+                DateTime now = DateTime.Now;
+                if (now >= finish)
+                {
+                    this.Invoke((MethodInvoker)delegate
+                    {
+                        // close the form on the forms thread
+                        this.Close();
+                    });
+                }
+            }
+            
         }
 
         public Form1()
@@ -79,6 +99,19 @@ namespace NonTurnableTester
             }
 
             QuestionListBox.SelectedIndex = 0;
+            sets.SetFinishTime();
+
+            Timer timer = new Timer();
+            timer.Tick += delegate {
+                TimeSpan remaining = sets.GetFinishTime().DateTime - DateTime.Now;
+                CompIDtoolStrip.Text = "Оставшееся время: " + (int)(remaining.TotalMinutes) + " минут " + (int)(remaining.TotalSeconds) + " секунд";
+                if (DateTime.Now >= sets.GetFinishTime())
+                {
+                    this.Close();
+                }
+            };
+            timer.Interval = 1000;
+            timer.Start();
         }
         private void QuestionListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -88,7 +121,7 @@ namespace NonTurnableTester
             }
             last_question_index = QuestionListBox.SelectedIndex;
 
-            switch (jsonSender.GetConfig().InPriority[0])
+            switch (sets.GetPriorities()[0])
             {
                 case "html":
                     webBrowser.DocumentText = pack.GetQuestions()[QuestionListBox.SelectedIndex].GetHTML();
@@ -123,6 +156,11 @@ namespace NonTurnableTester
                 elem.Visible = true;
             }
             StudentNameToolStrip.Text = $"Student: {NametextBox.Text}";
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FinishButton_Click(sender, e);
         }
 
         private void FinishButton_Click(object sender, EventArgs e)
