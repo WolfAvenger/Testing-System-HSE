@@ -46,12 +46,14 @@
             // 
             // QuestionListBox
             // 
+            this.QuestionListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.QuestionListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QuestionListBox.FormattingEnabled = true;
             this.QuestionListBox.ItemHeight = 25;
             this.QuestionListBox.Location = new System.Drawing.Point(12, 12);
             this.QuestionListBox.Name = "QuestionListBox";
-            this.QuestionListBox.Size = new System.Drawing.Size(81, 679);
+            this.QuestionListBox.Size = new System.Drawing.Size(81, 754);
             this.QuestionListBox.TabIndex = 0;
             this.QuestionListBox.SelectedIndexChanged += new System.EventHandler(this.QuestionListBox_SelectedIndexChanged);
             // 
@@ -73,8 +75,8 @@
             this.CompIDtoolStrip.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.CompIDtoolStrip.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CompIDtoolStrip.Name = "CompIDtoolStrip";
-            this.CompIDtoolStrip.Size = new System.Drawing.Size(102, 24);
-            this.CompIDtoolStrip.Text = "Computer_ID";
+            this.CompIDtoolStrip.Size = new System.Drawing.Size(152, 24);
+            this.CompIDtoolStrip.Text = "Оставшееся время: ";
             this.CompIDtoolStrip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // StudentNameToolStrip
@@ -82,14 +84,16 @@
             this.StudentNameToolStrip.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
             this.StudentNameToolStrip.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StudentNameToolStrip.Name = "StudentNameToolStrip";
-            this.StudentNameToolStrip.Size = new System.Drawing.Size(111, 24);
-            this.StudentNameToolStrip.Text = "Student Name";
+            this.StudentNameToolStrip.Size = new System.Drawing.Size(75, 24);
+            this.StudentNameToolStrip.Text = "Студент: ";
             this.StudentNameToolStrip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // AnswerCCheckBox
             // 
+            this.AnswerCCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.AnswerCCheckBox.AutoSize = true;
-            this.AnswerCCheckBox.Location = new System.Drawing.Point(133, 629);
+            this.AnswerCCheckBox.Location = new System.Drawing.Point(132, 680);
             this.AnswerCCheckBox.Name = "AnswerCCheckBox";
             this.AnswerCCheckBox.Size = new System.Drawing.Size(89, 21);
             this.AnswerCCheckBox.TabIndex = 3;
@@ -98,8 +102,10 @@
             // 
             // AnswerDCheckBox
             // 
+            this.AnswerDCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.AnswerDCheckBox.AutoSize = true;
-            this.AnswerDCheckBox.Location = new System.Drawing.Point(133, 670);
+            this.AnswerDCheckBox.Location = new System.Drawing.Point(132, 745);
             this.AnswerDCheckBox.Name = "AnswerDCheckBox";
             this.AnswerDCheckBox.Size = new System.Drawing.Size(90, 21);
             this.AnswerDCheckBox.TabIndex = 2;
@@ -108,8 +114,10 @@
             // 
             // AnswerBCheckBox
             // 
+            this.AnswerBCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.AnswerBCheckBox.AutoSize = true;
-            this.AnswerBCheckBox.Location = new System.Drawing.Point(133, 585);
+            this.AnswerBCheckBox.Location = new System.Drawing.Point(132, 615);
             this.AnswerBCheckBox.Name = "AnswerBCheckBox";
             this.AnswerBCheckBox.Size = new System.Drawing.Size(89, 21);
             this.AnswerBCheckBox.TabIndex = 1;
@@ -118,8 +126,10 @@
             // 
             // AnswerACheckBox
             // 
+            this.AnswerACheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.AnswerACheckBox.AutoSize = true;
-            this.AnswerACheckBox.Location = new System.Drawing.Point(134, 544);
+            this.AnswerACheckBox.Location = new System.Drawing.Point(133, 555);
             this.AnswerACheckBox.Name = "AnswerACheckBox";
             this.AnswerACheckBox.Size = new System.Drawing.Size(89, 21);
             this.AnswerACheckBox.TabIndex = 0;
@@ -133,9 +143,9 @@
             this.FinishButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.FinishButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FinishButton.ForeColor = System.Drawing.Color.GreenYellow;
-            this.FinishButton.Location = new System.Drawing.Point(988, 781);
+            this.FinishButton.Location = new System.Drawing.Point(932, 781);
             this.FinishButton.Name = "FinishButton";
-            this.FinishButton.Size = new System.Drawing.Size(120, 23);
+            this.FinishButton.Size = new System.Drawing.Size(176, 23);
             this.FinishButton.TabIndex = 5;
             this.FinishButton.Text = "Finish the test";
             this.FinishButton.UseVisualStyleBackColor = false;
@@ -158,12 +168,12 @@
             this.NametextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NametextBox.Location = new System.Drawing.Point(492, 295);
             this.NametextBox.Name = "NametextBox";
-            this.NametextBox.Size = new System.Drawing.Size(537, 49);
+            this.NametextBox.Size = new System.Drawing.Size(463, 49);
             this.NametextBox.TabIndex = 7;
             // 
             // StartButton
             // 
-            this.StartButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.StartButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.StartButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StartButton.Location = new System.Drawing.Point(492, 370);
             this.StartButton.Name = "StartButton";
@@ -175,10 +185,13 @@
             // 
             // webBrowser
             // 
+            this.webBrowser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.webBrowser.Location = new System.Drawing.Point(133, 12);
             this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser.Name = "webBrowser";
-            this.webBrowser.Size = new System.Drawing.Size(975, 526);
+            this.webBrowser.Size = new System.Drawing.Size(975, 537);
             this.webBrowser.TabIndex = 9;
             this.webBrowser.TabStop = false;
             this.webBrowser.Visible = false;

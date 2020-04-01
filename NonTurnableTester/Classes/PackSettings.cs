@@ -19,14 +19,6 @@ namespace NonTurnableTester
         [JsonProperty]
         private int Mins { get; set; }
 
-        public PackSettings(int minutes, DateTimeOffset end, List<string> p)
-        {
-            EndTime = end;
-            DateTime now = DateTime.Now;
-            Duration = new DateTimeOffset(now.AddMinutes(minutes), TimeZoneInfo.Local.GetUtcOffset(now));
-            InPriority = p;
-        }
-
         public void SetFinishTime()
         {
             DateTime now = DateTime.Now;

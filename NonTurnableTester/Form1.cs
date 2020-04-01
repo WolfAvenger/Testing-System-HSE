@@ -23,6 +23,7 @@ namespace NonTurnableTester
         JsonSender jsonSender = new JsonSender();
         Dictionary<CheckBox, Answer> CA = new Dictionary<CheckBox, Answer>();
         PackSettings sets;
+        Timer timer;
 
         void SaveLastAnswer(int index, Question q)
         {
@@ -99,19 +100,6 @@ namespace NonTurnableTester
             }
 
             QuestionListBox.SelectedIndex = 0;
-            sets.SetFinishTime();
-
-            Timer timer = new Timer();
-            timer.Tick += delegate {
-                TimeSpan remaining = sets.GetFinishTime().DateTime - DateTime.Now;
-                CompIDtoolStrip.Text = "Оставшееся время: " + (int)(remaining.TotalMinutes) + " минут " + (int)(remaining.TotalSeconds) + " секунд";
-                if (DateTime.Now >= sets.GetFinishTime())
-                {
-                    this.Close();
-                }
-            };
-            timer.Interval = 1000;
-            timer.Start();
         }
         private void QuestionListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -133,7 +121,6 @@ namespace NonTurnableTester
                     webBrowser.DocumentText = pack.GetQuestions()[QuestionListBox.SelectedIndex].GetQuestionText();
                     break;
             }
-            CompIDtoolStrip.Text = webBrowser.DocumentText;
             List<Answer> a = pack.GetQuestions()[QuestionListBox.SelectedIndex].getAnswers();
             for (var i=0; i<4; i++)
             {
@@ -155,7 +142,20 @@ namespace NonTurnableTester
             {
                 elem.Visible = true;
             }
-            StudentNameToolStrip.Text = $"Student: {NametextBox.Text}";
+            StudentNameToolStrip.Text = $"Студент: {NametextBox.Text}";
+
+            sets.SetFinishTime();
+            timer = new Timer();
+            timer.Interval = 1000;
+            timer.Tick += delegate {
+                TimeSpan remaining = sets.GetFinishTime().DateTime - DateTime.Now;
+                CompIDtoolStrip.Text = "Оставшееся время: " + (int)remaining.TotalMinutes + ":" + string.Format("{0:00}", Math.Round(remaining.TotalSeconds % 60));
+                if (remaining.TotalSeconds <= 0)
+                {
+                    this.Close();
+                }
+            };
+            timer.Start();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
