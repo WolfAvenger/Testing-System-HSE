@@ -41,24 +41,6 @@ namespace NonTurnableTester
             return url;
         }
 
-        void TimeThread()
-        {
-            DateTimeOffset finish = sets.GetFinishTime();
-            while (true)
-            {
-                DateTime now = DateTime.Now;
-                if (now >= finish)
-                {
-                    this.Invoke((MethodInvoker)delegate
-                    {
-                        // close the form on the forms thread
-                        this.Close();
-                    });
-                }
-            }
-            
-        }
-
         public Form1()
         {
             InitializeComponent();
@@ -86,7 +68,7 @@ namespace NonTurnableTester
             
             pack = jsonSender.GetPack(false);
             sets = pack.GetSettings();
-            if (sets.GetPriorities().Count == 0) sets.SetPriorities(jsonSender.GetConfig().InPriority);
+            if (sets.GetPriorities().Count != 3) sets.SetPriorities(jsonSender.GetConfig().InPriority);
             answerCheckBoxes = new CheckBox[] { AnswerACheckBox, AnswerBCheckBox, AnswerCCheckBox, AnswerDCheckBox };
             
             foreach (var elem in answerCheckBoxes)
@@ -117,6 +99,7 @@ namespace NonTurnableTester
                 case "image":
                     webBrowser.DocumentText = EmbedIMG(pack.GetQuestions()[QuestionListBox.SelectedIndex].GetQuestionImageEncoded());
                     break;
+                default:
                 case "text":
                     webBrowser.DocumentText = pack.GetQuestions()[QuestionListBox.SelectedIndex].GetQuestionText();
                     break;
@@ -152,7 +135,8 @@ namespace NonTurnableTester
                 CompIDtoolStrip.Text = "Оставшееся время: " + (int)remaining.TotalMinutes + ":" + string.Format("{0:00}", Math.Round(remaining.TotalSeconds % 60));
                 if (remaining.TotalSeconds <= 0)
                 {
-                    this.Close();
+                    SaveLastAnswer(last_question_index, pack.GetQuestions()[last_question_index]);
+                    Close();
                 }
             };
             timer.Start();
