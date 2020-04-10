@@ -14,24 +14,24 @@ namespace NonTurnableTester
         [JsonProperty]
         private List<Answer> AllAnswers = new List<Answer>(4);
         [JsonProperty]
-        private string QuestionText { get; set; }
+        private string text { get; set; }
         [JsonProperty]
-        private string QuestionImageEncoded { get; set; }
+        private string image { get; set; }
         [JsonProperty]
-        private string QuestionHTML { get; set; }
+        private string html { get; set; }
 
         public Question(List<Answer> ans, string Q, string imgB, string html)
         {
             AllAnswers = ans;
-            QuestionText = Q;
-            QuestionImageEncoded = imgB;
-            QuestionHTML = html;
+            text = Q;
+            image = imgB;
+            this.html = html;
         }
 
         public List<Answer> getAnswers() { return AllAnswers; }
-        public string GetQuestionText() { return QuestionText; }
-        public string GetHTML() { return QuestionHTML; }
-        public string GetQuestionImageEncoded() { return QuestionImageEncoded; }
+        public string GetQuestionText() { return text; }
+        public string GetHTML() { return html; }
+        public string GetQuestionImageEncoded() { return image; }
 
         public void SetGivenAnswer(int ID, bool state) 
         { 

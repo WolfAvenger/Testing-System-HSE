@@ -90,21 +90,36 @@ namespace NonTurnableTester
                 SaveLastAnswer(last_question_index, pack.GetQuestions()[last_question_index]);
             }
             last_question_index = QuestionListBox.SelectedIndex;
+            Question q = pack.GetQuestions()[QuestionListBox.SelectedIndex];
 
-            switch (sets.GetPriorities()[0])
+            foreach (var elem in sets.GetPriorities())
             {
-                case "html":
-                    webBrowser.DocumentText = pack.GetQuestions()[QuestionListBox.SelectedIndex].GetHTML();
-                    break;
-                case "image":
-                    webBrowser.DocumentText = EmbedIMG(pack.GetQuestions()[QuestionListBox.SelectedIndex].GetQuestionImageEncoded());
-                    break;
-                default:
-                case "text":
-                    webBrowser.DocumentText = pack.GetQuestions()[QuestionListBox.SelectedIndex].GetQuestionText();
-                    break;
+                //webBrowser.DocumentText = "";
+                if (elem.Equals("text")) { 
+                    if (q.GetQuestionText() != "")
+                    {
+                        webBrowser.DocumentText = q.GetQuestionText();
+                        break;
+                    }
+                }
+                else if (elem.Equals("html"))
+                {
+                    if (q.GetHTML() != "")
+                    {
+                        webBrowser.DocumentText = q.GetHTML();
+                        break;
+                    }
+                }
+                else if (elem.Equals("image"))
+                {
+                    if (q.GetQuestionImageEncoded() != "")
+                    {
+                        webBrowser.DocumentText = EmbedIMG(q.GetQuestionImageEncoded());
+                        break;
+                    }
+                }
             }
-            List<Answer> a = pack.GetQuestions()[QuestionListBox.SelectedIndex].getAnswers();
+            List<Answer> a = q.getAnswers();
             for (var i=0; i<4; i++)
             {
                 answerCheckBoxes[i].Text = a[i].GetText();
