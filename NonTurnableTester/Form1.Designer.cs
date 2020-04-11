@@ -156,19 +156,19 @@
             this.Namelabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Namelabel.AutoSize = true;
             this.Namelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Namelabel.Location = new System.Drawing.Point(202, 298);
+            this.Namelabel.Location = new System.Drawing.Point(125, 298);
             this.Namelabel.Name = "Namelabel";
-            this.Namelabel.Size = new System.Drawing.Size(284, 44);
+            this.Namelabel.Size = new System.Drawing.Size(366, 44);
             this.Namelabel.TabIndex = 6;
-            this.Namelabel.Text = "Student Name: ";
+            this.Namelabel.Text = "Имя тестируемого: ";
             // 
             // NametextBox
             // 
             this.NametextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.NametextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NametextBox.Location = new System.Drawing.Point(492, 295);
+            this.NametextBox.Location = new System.Drawing.Point(548, 295);
             this.NametextBox.Name = "NametextBox";
-            this.NametextBox.Size = new System.Drawing.Size(463, 49);
+            this.NametextBox.Size = new System.Drawing.Size(407, 49);
             this.NametextBox.TabIndex = 7;
             // 
             // StartButton
@@ -179,7 +179,7 @@
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(195, 55);
             this.StartButton.TabIndex = 8;
-            this.StartButton.Text = "Start";
+            this.StartButton.Text = "Начать";
             this.StartButton.UseVisualStyleBackColor = true;
             this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
             // 

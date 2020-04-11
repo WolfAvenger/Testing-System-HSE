@@ -1,0 +1,13 @@
+C:\Users\Simon\Desktop\Testing-System-HSE\NonTurnableTester\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Simon\Desktop\Testing-System-HSE\NonTurnableTester\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Simon\Desktop\Testing-System-HSE\NonTurnableTester\obj\Debug\NewTester.csprojAssemblyReference.cache
+C:\Users\Simon\Desktop\Testing-System-HSE\NonTurnableTester\obj\Debug\NonTurnableTester.Form1.resources
+C:\Users\Simon\Desktop\Testing-System-HSE\NonTurnableTester\obj\Debug\NewTester.csproj.GenerateResource.cache
+C:\Users\Simon\Desktop\Testing-System-HSE\NonTurnableTester\obj\Debug\NewTester.csproj.CoreCompileInputs.cache
+C:\Users\Simon\Desktop\Testing-System-HSE\NonTurnableTester\obj\Debug\NewTester.csproj.CopyComplete
+C:\Users\Simon\Desktop\Testing-System-HSE\NonTurnableTester\bin\Debug\NewTester.exe.config
+C:\Users\Simon\Desktop\Testing-System-HSE\NonTurnableTester\bin\Debug\NewTester.exe
+C:\Users\Simon\Desktop\Testing-System-HSE\NonTurnableTester\bin\Debug\NewTester.pdb
+C:\Users\Simon\Desktop\Testing-System-HSE\NonTurnableTester\obj\Debug\NewTester.exe
+C:\Users\Simon\Desktop\Testing-System-HSE\NonTurnableTester\obj\Debug\NewTester.pdb
+C:\Users\Simon\Desktop\Testing-System-HSE\NonTurnableTester\obj\Debug\NonTurnableTester.Properties.Resources.resources

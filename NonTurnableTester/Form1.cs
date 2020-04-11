@@ -1,15 +1,7 @@
 ﻿using NonTurnableTester.Classes;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Threading;
 using Timer = System.Windows.Forms.Timer;
 
 namespace NonTurnableTester
@@ -94,7 +86,7 @@ namespace NonTurnableTester
 
             foreach (var elem in sets.GetPriorities())
             {
-                //webBrowser.DocumentText = "";
+                int counter = 0;
                 if (elem.Equals("text")) { 
                     if (q.GetQuestionText() != "")
                     {
@@ -117,6 +109,12 @@ namespace NonTurnableTester
                         webBrowser.DocumentText = EmbedIMG(q.GetQuestionImageEncoded());
                         break;
                     }
+                }
+                counter++;
+                if (counter == 2)
+                {
+                    webBrowser.DocumentText = q.GetQuestionText();
+                    break;
                 }
             }
             List<Answer> a = q.getAnswers();

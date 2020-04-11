@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Forms;
 using Newtonsoft.Json;
 
 namespace NonTurnableTester.Classes
@@ -23,12 +20,20 @@ namespace NonTurnableTester.Classes
         }
         public Pack GetPack(bool from_repo)
         {
-            Pack p;
+            Pack p = null;
             if (!from_repo)
             {
-                using (StreamReader r = new StreamReader(new FileStream(Config.REPO_PATH, FileMode.Open)))
+                try
                 {
-                    p = JsonConvert.DeserializeObject<Pack>(r.ReadToEnd());
+                    using (StreamReader r = new StreamReader(new FileStream(Config.REPO_PATH, FileMode.Open)))
+                    {
+                        p = JsonConvert.DeserializeObject<Pack>(r.ReadToEnd());
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Файла с пакетом вопросов не существует в указанном в файле конфигурации пути.");
+                    Environment.Exit(0);
                 }
             }
             else throw new NotImplementedException();

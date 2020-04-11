@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Web.Script.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 
 namespace NonTurnableTester
 {
@@ -17,7 +11,7 @@ namespace NonTurnableTester
 
         public void SerExample()
         {
-            REPO_PATH = @"http:\localhost:3000";
+            REPO_PATH = @"";
             using (StreamWriter sw = new StreamWriter("config.cfg"))
             {
                 sw.Write(JsonConvert.SerializeObject(this));
